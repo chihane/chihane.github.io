@@ -77,7 +77,7 @@ sechby:
   tag:   #with
 
 # BUILD SETTINGS
-markdown: kramdown#redcarpet
+markdown: redcarpet
 highlighter: pygments
 sass:
   sass_dir: _sass

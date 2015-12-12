@@ -1,0 +1,10 @@
+{% if site.theme.katex %}
+<script src="{{ "/js/katex_init.js" | prepend: site.baseurl }}"></script>
+{% endif %}
+
+{% if site.theme.footer_text %}
+<footer id="page-footer-trans" class="page-footer">
+	Copyright &copy; {{ site.time | date: '%Y' }} {{ site.theme.footer_text }}
+	<p>Powered by <a href="http://jekyllrb.com/">Jekyll</a>. Theme designed by <a href="https://fengzhichu.com/">枫之楚</a>.</p>
+</footer>
+{% endif %}

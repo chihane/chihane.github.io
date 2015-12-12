@@ -1,0 +1,103 @@
+# SITE CONFIGURATION
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "https://mlxy.github.io" # the base hostname & protocol for your site
+imageurl: "https://unsplash.it/2600/500?image=681&gravity=north"
+# THEME-SPECIFIC CONFIGURATION
+theme:
+  # Meta
+  title: "乙女よ、コードを書け！"
+  #avatar: avatar.png
+  hometitle: "首页"
+  yoursitetitle: 乙女よ、コードを書け！
+  full_name: Habana Chihane
+  gravatar: # Email MD5 hash
+  description: "Habana Chihane mlxy Android Programmer" # used by search engines
+  visiblewords: 200
+  # Header and footer text
+ # header_text: 
+
+  #   <p>Remove all header text in <code>_config.yml</code> to disable this feature.</p>
+  header_text_feature_image: img/sample_feature_img.png
+  place_holder_image: img/sample_feature_img.png
+  footer_text: >
+   <a href="{{site.url}}">Habana Chihane</a> 
+
+  # Icons
+  rss: true
+  behance:
+  bitbucket:
+  dribbble:
+  facebook:
+  flickr:
+  github: "mlxy"
+  weibo: 
+  google_plus:
+  instagram:
+  linkedin:  # Full URL
+  pinterest: 
+  reddit:
+  soundcloud:
+  stack_exchange:  # Full URL
+  steam:
+  tumblr:
+  twitter: 
+  wordpress:
+  youtube:
+  email_address: "chihane@yeah.net" # Full email address, e.g. "sam@example.com"
+
+  # Scripts
+  google_analytics: "UA-71248446-1"
+  disqus_shortname: "chihane"
+  katex: true # Enable if using math markup
+
+  # Localization strings
+  str_follow_on: "关注我的" #"Follow on"
+  str_rss_follow: "订阅 RSS" #"Follow RSS feed"
+  str_email: "Email"
+  #str_next: "Next"
+  #str_prev: "Prev"
+  str_continue_reading: "阅读全文"
+
+  # Colours, typography and padding
+  # Open the "_sass > base" folder, and open "_variables.scss"
+  google_fonts: "Source+Sans+Pro:400,700,700italic,400italic"
+
+  # Post navigation
+  post_navigation: true
+
+# PAGINATION
+enforce_ssl: "mlxy.github.io"
+paginate: 5
+paginate_path: "blog/page:num"
+permalink: blog/:title/
+
+# Posted in ... with ...
+sechby: 
+  category:   #in
+  tag:   #with
+
+# BUILD SETTINGS
+markdown: redcarpet
+highlighter: pygments
+sass:
+  sass_dir: _sass
+  style: :compressed
+
+redcarpet:
+  extensions:
+    - hard_wrap
+    - no_intra_emphasis
+    - autolink
+    - strikethrough
+    - fenced_code_blocks
+# ARCHIVES
+gems:
+  - jekyll-archives
+  - jekyll-paginate
+
+jekyll-archives:
+  enabled:
+    - month
+  layout: "archive"
+  permalinks:
+    month: "/archives/month/:year-:month/"

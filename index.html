@@ -26,6 +26,8 @@ layout: default
 		    </p>
 		  </header>
 		  <div class="excerpt">
+			{{ post.content }}
+		  <!--
 		  {% assign num = post.content | number_of_words %}
 		  {% if  num  < site.theme.visiblewords %}
 		    {{ post.content }}
@@ -37,6 +39,7 @@ layout: default
 		    </a>
 		    </p>
 		  {% endif %}
+		  -->
 		  </div>
 		</div>
 		{% endfor %}

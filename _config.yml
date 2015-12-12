@@ -48,7 +48,7 @@ theme:
   # Scripts
   google_analytics: "UA-71248446-1"
   disqus_shortname: "chihane"
-  katex: true # Enable if using math markup
+  katex: false # Enable if using math markup
 
   # Localization strings
   str_follow_on: "关注我的" #"Follow on"
@@ -77,7 +77,7 @@ sechby:
   tag:   #with
 
 # BUILD SETTINGS
-markdown: redcarpet
+markdown: kramdown#redcarpet
 highlighter: pygments
 sass:
   sass_dir: _sass

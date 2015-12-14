@@ -1,6 +1,6 @@
 #乙女よ、コードを書け！
 
-Personal blog.
+Personal blog. ([Check it out](https://mlxy.github.io))
 
 Blog theme from [fengzhichu](https://github.com/fengzhichu "fengzhichu").
 

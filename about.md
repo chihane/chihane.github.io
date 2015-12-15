@@ -12,7 +12,7 @@ permalink: /about/
 
 等我想清楚说点什么之后再补充。
 
-之前使用的是博客园（[乙女よコードを書け！](http://www.cnblogs.com/chihane/)），之后会尝试写脚本把从前的文章搬运过来。
+之前使用的是博客园（[乙女よコードを書け！](http://www.cnblogs.com/chihane/)）。
 
 <br>
 

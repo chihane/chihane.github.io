@@ -8,10 +8,11 @@ date = time.strftime('%Y-%m-%d %H:%M', localtime)
 
 if not os.path.exists(filename):
     with open(filename, 'w') as f:
-        f.writelines(['---\n',
-                      'layout: post\n',
-                      'title: TITLE\n',
-                      'date: %s\n' % date,
-                      'categories: CATEGORY\n',
-                      'tags: [TAG]\n', '---\n\n'])
+        f.writelines(['---\n\n',
+                      'layout: post\n\n',
+                      'title: TITLE\n\n',
+                      'date: %s\n\n' % date,
+                      'categories: CATEGORY\n\n',
+                      'tags: [TAG]\n\n',
+					  '---\n\n'])
         f.close()

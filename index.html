@@ -14,11 +14,11 @@ layout: default
 		{% include post_tags_category.html %}
 		<div class="post-teaser">
 		  <header>
-		    <h1>
+		    <h2>
 		      <a id="post-link-trans" class="post-link" href="{{ post.url | prepend: site.baseurl }}">
 		        {{ post.title }}
 		      </a>
-		    </h1>
+		    </h2>
 		    <p id="subtitletrans" class="subtitlecontainer">
 		      <a class="subtitle">{{ post.date | date: "%Y年%m月%-d日" }}</a>
 		      {% if post.author %} | <a class="subtitle" href="{{ site.baseurl }}/about/">{{ post.author }}</a>{% endif %}

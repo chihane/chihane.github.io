@@ -10,6 +10,8 @@ categories: CATEGORY
 
 tags: [tumblr]
 
+published: false
+
 ---
 
 Tumblr官方都给了客户端我还傻×呵呵地写爬虫……

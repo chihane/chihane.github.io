@@ -9,9 +9,9 @@ theme:
   #avatar: avatar.png
   hometitle: "首页"
   yoursitetitle: 乙女よ、コードを書け！
-  full_name: Habana Chihane
+  full_name: Chihane Habana
   gravatar: # Email MD5 hash
-  description: "Habana Chihane mlxy Android Programmer" # used by search engines
+  description: "Chihane Habana mlxy Android Programmer" # used by search engines
   visiblewords: 200
   # Header and footer text
  # header_text: 
@@ -20,7 +20,7 @@ theme:
   header_text_feature_image: img/sample_feature_img.png
   place_holder_image: img/sample_feature_img.png
   footer_text: >
-   <a href="{{site.url}}">Habana Chihane</a> 
+   <a href="{{site.url}}">Chihane Habana</a> 
 
   # Icons
   rss: true

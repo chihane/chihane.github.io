@@ -1,15 +1,9 @@
 ---
-
 layout: post
-
 title: 单例模式 V2.0.1.2016.1.14.11.10.8527-dev-alpha1(build 0008)
-
 date: 2016-01-14 11:10
-
 categories: Java
-
 tags: [singleton, java, design pattern]
-
 ---
 
 ## 1. 随手写一个
@@ -30,7 +24,7 @@ public class Foo {
 
 > 我怎么记得jvm现在对静态已经lazy了。没碰到那个类时静态部分根本没动。——@[石富贵](http://www.zhihu.com/people/rockace1)
 
-
+<br>
 
 ## 2. 于是改成 Lazy-load
 
@@ -53,7 +47,7 @@ public class Foo {
 
 存在着前一个线程还在初始化对象，后一个线程就通过了`if (instance == null)`的可能，结果就是对象被多次初始化，多次初始化还叫什么单例模式，改。
 
-
+<br>
 
 ## 3. 同步方法
 
@@ -81,7 +75,7 @@ public class Foo {
 
 太慢了，改。
 
-
+<br>
 
 ## 4. 同步字节码
 
@@ -108,11 +102,11 @@ public class Foo {
 
 所有访问`getInstance()`方法时实例还没初始化的线程都在`synchronized (Foo.class)`前排队，轮流初始化实例。
 
-
+<br>
 
 明显不对啊，改。
 
-
+<br>
 
 ## 5. 二次验证
 
@@ -135,36 +129,36 @@ public class Foo {
 
 嵌套已经有点瞎狗眼的迹象了……
 
-
+<br>
 
 总之这下似乎是没问题了，所有线程排队等待初始化，排到自己的时候多加一次空值判断，如果实例已经被前面的线程初始化了就拿了实例走人。
 
 此策略名唤`Double-check`。
 
-
+<br>
 
 然而真的没问题了吗？
 
 真的还有。
 
-
+<br>
 
 问题在于`new Foo()`这句话并非原子操作，多线程并发的情况下可能出现对象未初始化完成就被使用的问题。
 
-
+<br>
 
 ## 5.1. 那怎么叫 Atomic 呢
 
 原子是化学元素可分割的最小单元，原子操作是操作可分割的最小单元。
 
-
+<br>
 
 日文维基将原子操作称为[不可分操作](https://ja.wikipedia.org/wiki/%E4%B8%8D%E5%8F%AF%E5%88%86%E6%93%8D%E4%BD%9C)，不可分操作满足以下两个条件：
 
 1. 在完成操作之前，其他进程无法观测它进行中的状态。
 2. 部分操作失败会导致一系列操作的整体失败，系统状态回归原子操作前的状态。
 
-
+<br>
 
 对象初始化并非原子操作，根据 JVM 实现的不同，就有可能出现第5节最后提到的问题。
 
@@ -172,15 +166,15 @@ public class Foo {
 
 > Thread *B* notices that the shared variable has been initialized (or so it appears), and returns its value. Because thread *B* believes the value is already initialized, it does not acquire the lock. If *B* uses the object before all of the initialization done by *A* is seen by *B* (either because *A* has not finished initializing it or because some of the initialized values in the object have not yet percolated to the memory *B* uses ([cache coherence](https://en.wikipedia.org/wiki/Cache_coherence))), the program will likely crash.
 
-
+<br>
 
 > 线程 B 注意到共享变量已经被初始化（或者看起来是这么回事）并被返回。由于线程 B 相信变量的值已经初始化完成，就没有请求锁。如果 B 在 A 完成所有初始化之前使用了 B 看到的那个对象（无论是由于 A 没有完成初始化还是对象中有些初始化了的值还没有分配到 B 使用的那部分内存），程序就有可能崩溃。
 
-
+<br>
 
 不过解决起来倒是也简单。
 
-
+<br>
 
 ## 6. volatile
 
@@ -211,15 +205,15 @@ volatile 翻译为不稳定的，可见其性质。
 
 参考 http://www.javamex.com/tutorials/synchronization_volatile.shtml 。
 
-
+<br>
 
 第二个特性使得其中一个线程执行单例初始化时其他线程都要等到初始化完成后才能访问单例。
 
-
+<br>
 
 就为避免多次初始化你说费多大劲……
 
-
+<br>
 
 ## 7. 那少费点劲成不成啊
 
@@ -243,13 +237,13 @@ public class Foo {
 
 于是，一个内部类就完美搞定了，跟之前比起来好看多了是不是。
 
-
+<br>
 
 ## 8. Q: 怎么不早说呢？
 
 A: 早说我博客还写不写了。
 
-
+<br>
 
 ## 9. 能再给力点吗，老师
 
@@ -274,7 +268,7 @@ Foo.INSTANCE.bar();
 
 即可。
 
-
+<br>
 
 如果有人非要反射实例化呢？比如这样：
 
@@ -293,7 +287,7 @@ java.lang.NoSuchMethodException: Foo.<init>()
 	at Foo.main(Foo.java:13)
 ```
 
-
+<br>
 
 等一下，反编译的时候好像发现编译器创建了一个构造函数，能用这个不？
 
@@ -321,11 +315,11 @@ java.lang.NoSuchMethodException: Foo.<init>(java.lang.String, java.lang.Integer)
 	at Foo.main(Foo.java:12)
 ```
 
-
+<br>
 
 看来足够靠谱了，而且只需要一行就可以实现单例，比上面任何一个都要简单。
 
-
+<br>
 
 ## 10. 完
 

@@ -1,6 +1,6 @@
 # SITE CONFIGURATION
 baseurl: "" # the subpath of your site, e.g. /blog/
-url: "https://chihane.in" # the base hostname & protocol for your site
+url: "https://mlxy.github.io" # the base hostname & protocol for your site
 imageurl: "https://unsplash.it/2600/500?image=681&gravity=north"
 # THEME-SPECIFIC CONFIGURATION
 theme:
@@ -66,7 +66,7 @@ theme:
   post_navigation: true
 
 # PAGINATION
-enforce_ssl: "chihane.in"
+enforce_ssl: "mlxy.github.io"
 paginate: 5
 paginate_path: "blog/page:num"
 permalink: blog/:title/

@@ -2,7 +2,7 @@
 
 layout: post
 
-title: [译] Dagger 2 官方指南
+title: 【译】Dagger 2 官方指南
 
 date: 2016-01-29 11:34
 

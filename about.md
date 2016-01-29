@@ -19,7 +19,8 @@ permalink: /about/
 ### #联系方式
 
 - Email: <{{site.theme.email_address}}>
-- Github: <https://github.com/mlxy>
+- Github: <https://github.com/chihane>
+- Weibo: <http://weibo.com/chihaneh>
 
 <br>
 

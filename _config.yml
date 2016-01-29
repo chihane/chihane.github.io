@@ -11,7 +11,7 @@ theme:
   yoursitetitle: 乙女よ、コードを書け！
   full_name: Chihane Habana
   gravatar: # Email MD5 hash
-  description: "Chihane Habana mlxy Android Programmer" # used by search engines
+  description: "Chihane Habana Android Programmer" # used by search engines
   visiblewords: 200
   # Header and footer text
  # header_text: 
@@ -29,7 +29,7 @@ theme:
   dribbble:
   facebook:
   flickr:
-  github: "mlxy"
+  github: "chihane"
   weibo: "chihaneh"
   google_plus:
   instagram:

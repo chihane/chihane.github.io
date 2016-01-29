@@ -307,7 +307,6 @@ Dagger 的注解处理器还可能生成一些名字像是`CoffeeMaker$$Factory.
 
 ## 许可证(License)
 
-> ``` 
 > Copyright 2014 Google, Inc.
 > Copyright 2012 Square, Inc.
 > 
@@ -322,4 +321,6 @@ Dagger 的注解处理器还可能生成一些名字像是`CoffeeMaker$$Factory.
 > WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 > See the License for the specific language governing permissions and
 > limitations under the License.
-> ```
+
+##原文
+<http://google.github.io/dagger/>

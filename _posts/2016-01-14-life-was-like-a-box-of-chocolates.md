@@ -1,9 +1,15 @@
 ---
+
 layout: post
+
 title: 单例模式 V2.0.1.2016.1.14.11.10.8527-dev-alpha1(build 0008)
+
 date: 2016-01-14 11:10
+
 categories: Java
+
 tags: [singleton, java, design pattern]
+
 ---
 
 ## 1. 随手写一个

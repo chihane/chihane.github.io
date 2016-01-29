@@ -1,9 +1,15 @@
 ---
+
 layout: post
+
 title: [译] Dagger 2 官方指南
+
 date: 2016-01-29 11:34
+
 categories: Translation
+
 tags: [dagger2, translation, tutorial, google]
+
 ---
 
 应用中最好的类是那些用来做实事的类：`BarcodeDecoder`，`KoopaPhysicsEngine`，`AudioStreamer`什么的。这些类拥有着依赖：比如`BarcodeCameraFinder`，`DefaultPhysicsEngine`，以及`HttpStreamer`。
@@ -143,7 +149,7 @@ public class CoffeeApp {
 
 现在图谱就构建完成了，入口也注入好了，我们来运行我们的咖啡机应用吧。真是愉♂悦啊。
 
-``` shell
+```
 $ java -cp ... coffee.CoffeeApp
 ~ ~ ~ heating ~ ~ ~
 => => pumping => =>
@@ -272,7 +278,7 @@ class DripCoffeeModule {
 
 编译时`javac`就会拒绝缺失的绑定:
 
-``` shell
+```
 [ERROR] COMPILATION ERROR :
 [ERROR] error: java.util.concurrent.Executor cannot be provided without an @Provides-annotated method.
 ```

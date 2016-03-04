@@ -10,7 +10,6 @@
 	<link rel="stylesheet" href="{{ "/css/post.style.css" | prepend: site.baseurl }}">
 
 	<script type='text/javascript' src="{{ "/js/jquery.js" | prepend: site.baseurl }}"></script>
-	<script type='text/javascript' src="{{ "/js/soundmanager2-nodebug-jsmin.js" | prepend: site.baseurl }}"></script>
 
 	<!--Favicon-->
 	<link rel="icon" href="favicon.ico" type="image/x-icon"/>
@@ -32,9 +31,9 @@
 	{% if site.theme.google_fonts %}
 	<link href="//fonts.googleapis.com/css?family={{ site.theme.google_fonts }}" rel="stylesheet" type="text/css">
 	{% endif %}
-
-	<!-- KaTeX -->
+	
 	{% if site.theme.katex %}
+	<!-- KaTeX -->
 	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.3.0/katex.min.css">
 	<script src="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.3.0/katex.min.js"></script>
 	{% endif %}

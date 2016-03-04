@@ -24,4 +24,4 @@ categories: Others
 
 避免了这种情况……
 
-![](https://raw.githubusercontent.com/mlxy/mlxy.github.io/master/img/2015-12-14-coding-net-is-so-good/1.jpg)
+![](https://raw.githubusercontent.com/chihane/chihane.github.io/master/img/2015-12-14-coding-net-is-so-good/1.jpg)

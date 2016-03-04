@@ -46,7 +46,7 @@ theme:
   email_address: "chihane@yeah.net" # Full email address, e.g. "sam@example.com"
 
   # Scripts
-  google_analytics: "UA-71248446-1"
+  google_analytics: #"UA-71248446-1"
   disqus_shortname: "chihane"
   katex: false # Enable if using math markup
 

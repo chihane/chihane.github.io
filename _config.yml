@@ -46,7 +46,7 @@ theme:
   email_address: "chihane@yeah.net" # Full email address, e.g. "sam@example.com"
 
   # Scripts
-  google_analytics: "UA-71248446-1"
+  google_analytics: #"UA-71248446-1"
   disqus_shortname: "chihane"
   katex: false # Enable if using math markup
 
@@ -60,7 +60,7 @@ theme:
 
   # Colours, typography and padding
   # Open the "_sass > base" folder, and open "_variables.scss"
-  google_fonts: "Source+Sans+Pro:400,700,700italic,400italic"
+  google_fonts: #"Source+Sans+Pro:400,700,700italic,400italic"
 
   # Post navigation
   post_navigation: true
@@ -77,8 +77,8 @@ sechby:
   tag:   #with
 
 # BUILD SETTINGS
-markdown: redcarpet
-highlighter: pygments
+markdown: kramdown
+highlighter: rouge
 sass:
   sass_dir: _sass
   style: :compressed

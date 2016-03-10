@@ -5,7 +5,7 @@ permalink: /license/
 hide: true
 ---
 
-###The MIT License (MIT)
+### The MIT License (MIT)
 
 Copyright © {{site.time|date: '%Y'}} [{{site.theme.full_name}}, {{site.url}}]({{site.url}})
 

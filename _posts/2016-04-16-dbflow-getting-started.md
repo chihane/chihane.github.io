@@ -6,7 +6,7 @@ title: 【译】DBFlow 入门指南
 
 date: 2016-04-16 15:49
 
-categories: Android
+categories: Translation
 
 tags: [database, android, orm, translation, tutorial]
 
@@ -205,3 +205,7 @@ public class Queen extends BaseModel {
 ```
 
 如果你想自己来懒加载表间关系，就指定`OneToMany.Method.DELETE`和`SAVE`，不用`ALL`。如果你希望`蚁后`的数据发生变化时不要保存它们，就只指定`DELETE`和`LOAD`。
+
+## 原文
+
+<https://github.com/Raizlabs/DBFlow/blob/master/usage/GettingStarted.md>

@@ -9,12 +9,11 @@ date: 2016-04-19 23:44:00 +0800
 categories: Translation
 
 tags: [database, android, orm, translation, tutorial]
-
 ---
 
-用 Android 自带的数据库写 SQL 语句`一点也不好玩`，所以为了简化使用，本库就提供了一系列 SQLite 语句的包装器，让 java 代码尽量接近 SQLite。
+用 Android 自带的数据库写 SQL 语句`一点也不好玩`，所以为了简化使用，本库就提供了一系列 SQLite 语句的包装器，让 java 代码尽量接近 SQLite 的使用。
 
-我在第一节中描述了如何使用包装器类来大大简化代码编写。
+我会在第一节中描述如何使用包装器类来大大简化代码编写。
 
 ## 示例
 
@@ -48,14 +47,14 @@ if (cursor.moveToFirst()) {
 }
 ```
 
-简单的查询这么写算是轻松加愉快，但是为什么还要写这些语句呢？
+简单的查询这么写算是轻松加愉快，但是为什么要继续写这些语句呢？
 
 如果：
 
 1. 要添加或者删除列
-2. 要给其他的表，查询或者其他类型的数据写更多这种功能呢？
+2. 要给其他的表，查询或者其他类型的数据写更多这种功能的话呢？
 
-简单来说，我们希望代码可以易于维护、短小精炼、可以复用，而且始终清晰易懂。在本库中，这次查询就可以变得非常简单：
+简单来说，我们希望代码可以易于维护、短小精炼、可以复用，而且始终清晰易懂。如果使用本库，这次查询就可以变得非常简单：
 
 ```java
 // 主线程检索
@@ -81,9 +80,9 @@ DBFlow 支持许多种查询，包括：
 
 ## SELECT 语句与检索方法
 
-`SELECT`语句可以从数据库中检索数据。我们可以通过以下方法检索数据：
+`SELECT`语句用来从数据库中检索数据。我们可以通过以下方法检索：
 
-1. 在主线程使用普通的`Select`方式
+1. 在主线程使用的普通的`Select`方式
 2. 使用`TransactionManager`执行`Transaction`（建议在大型查询中使用）。
 
 ```java
@@ -124,7 +123,7 @@ long count = SQLite.selectCountOf()
   .where(conditions).count();
 ```
 
-### Order By
+### Order By（排序）
 
 ```java
 // true 代表 'ASC'，false 代表 'DESC'
@@ -142,7 +141,7 @@ SQLite.select()
     .queryList();
 ```
 
-### Group By
+### Group By（分组）
 
 ```java
 SQLite.select()
@@ -151,7 +150,7 @@ SQLite.select()
   .queryList();
 ```
 
-### Having
+### Having（条件）
 
 ```java
 SQLite.select()
@@ -161,7 +160,7 @@ SQLite.select()
   .queryList();
 ```
 
-### LIMIT + OFFSET
+### LIMIT（限制） + OFFSET（偏移量）
 
 ```java
 SQLite.select()
@@ -176,19 +175,19 @@ SQLite.select()
 有两种方法更新数据库中的数据：
 
 1. 调用`SQLite.update()`或者使用`Update`类
-2. 使用`TransactionManager`执行`Transaction`（要求线程安全时建议使用，不过观察修改还是异步的）。
+2. 使用`TransactionManager`执行`Transaction`（要求线程安全时建议使用，不过观察修改结果还是异步的）。
 
 本节中我们来描述批量更新数据的方法。
 
 还是用之前蚂蚁的例子，我们现在想把所有雄性『工蚁』都改成『其他』蚂蚁，因为它们都懒成狗不干活了。
 
-使用原生 SQL 语句：
+使用原生 SQL 语句的话：
 
 ```sql
 UPDATE Ant SET type = 'other' WHERE male = 1 AND type = 'worker';
 ```
 
-使用 DBFlow：
+使用 DBFlow 的话：
 
 ```java
 // 原生 SQL 包装器
@@ -241,7 +240,7 @@ List<CustomTable> customers = new Select()
     .queryCustomList(CustomTable.class);
 ```
 
-`IProperty.withTable()`方法会把`NameAlias`或者`Table`的别名预设给查询中的`IProperty`，给 JOIN 查询提供方便：
+`IProperty.withTable()`方法会为查询中的`IProperty`预设`NameAlias`或者`Table`别名，简化 JOIN 查询：
 
 ```sql
 SELECT EMP_ID, NAME, DEPT FROM COMPANY LEFT OUTER JOIN DEPARTMENT
@@ -258,3 +257,6 @@ SQLite.select(Company_Table.EMP_ID, Company_Table.DEPT)
   .queryList();
 ```
 
+## 原文
+
+<https://github.com/Raizlabs/DBFlow/blob/master/usage/SQLQuery.md>

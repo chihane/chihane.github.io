@@ -1,4 +1,4 @@
-# SITE CONFIGURATION
+﻿# SITE CONFIGURATION
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://chihane.in" # the base hostname & protocol for your site
 imageurl: "https://unsplash.it/2600/500?image=681&gravity=north"
@@ -78,18 +78,14 @@ sechby:
 
 # BUILD SETTINGS
 markdown: kramdown
+kramdown:
+       input: GFM
+       hard_wrap: false
 highlighter: rouge
 sass:
   sass_dir: _sass
   style: :compressed
 
-redcarpet:
-  extensions:
-    - hard_wrap
-    - no_intra_emphasis
-    - autolink
-    - strikethrough
-    - fenced_code_blocks
 # ARCHIVES
 gems:
   - jekyll-archives

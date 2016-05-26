@@ -4,7 +4,7 @@ layout: post
 
 title: 【译】Google Data Binding Library 官方指南
 
-date: 2016-05-26 16:46
+date: 2016-05-26 16:46:00 +0800
 
 categories: Translation
 

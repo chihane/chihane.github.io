@@ -11,7 +11,7 @@ categories: Others
 tags: [andoid, interview]
 ---
 
-## 理想的情况
+### 理想的情况
 
 面试官： 说说你这个东西的实现思路吧。
 
@@ -47,7 +47,7 @@ tags: [andoid, interview]
 
 大概就这样。
 
-## 实际可能是
+### 实际可能是
 
 我：…………它代码又是用 apt 在编译时生成的——
 

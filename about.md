@@ -30,6 +30,8 @@ permalink: /about/
 
 <br>
 
-### #许可证
+### #许可证 License
 
-[The MIT License (MIT)]({{site.url}}/license/)
+All articles in this blog are licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/) unless noted otherwise.
+
+本博客所有文章在未特别说明的情况下均使用 [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/) 协议进行许可。

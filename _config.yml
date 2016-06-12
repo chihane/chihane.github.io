@@ -1,7 +1,7 @@
 ﻿# SITE CONFIGURATION
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://chihane.in" # the base hostname & protocol for your site
-imageurl: "https://unsplash.it/2600/500?image=681&gravity=north"
+imageurl: "https://unsplash.it/2600/500?image=1033&gravity=center"
 # THEME-SPECIFIC CONFIGURATION
 theme:
   # Meta

@@ -13,7 +13,7 @@ tags: [eventbus, android, java]
 published: false
 ---
 
-事件总线的核心是事件的收发，收发中的收又可以进一步分为订阅和处理两部分，【订阅】【发送】【处理】这三个部分构成了事件总线框架的基础，其余内容都算是锦上添花。
+事件总线的核心是事件的收发，收发中的收又可以进一步分为订阅和处理两部分，【订阅事件】【发送事件】【处理事件】这三个部分构成了事件总线框架的基础，其余内容都算是锦上添花。
 
 那么我们先搭建起基本框架，之后再慢慢细化。
 
@@ -35,16 +35,19 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        // 订阅事件
         SchoolBus.defaultInstance.register(this);
     }
 
     public void onClick(View view) {
+        // 发送事件
         SchoolBus.defaultInstance.post(new DefaultEvent("testtesttest"));
     }
 
     @Subscribe
     public void onEvent(DefaultEvent event) {
-        Toast.makeText(MainActivity.this, event.message, Toast.LENGTH_SHORT).show();
+        // 处理事件
+        Toast.makeText(this, event.message, Toast.LENGTH_SHORT).show();
     }
 }
 ```
@@ -108,9 +111,11 @@ public static List<Method> find(Object subscriber) {
 
     Class clazz = subscriber.getClass();
     Method[] methods = clazz.getDeclaredMethods();
+    // 遍历类中的所有方法
     for (Method method : methods) {
         Annotation[] annotations = method.getDeclaredAnnotations();
         for (Annotation annotation : annotations) {
+            // 找出包含 @Subscribe 注解的方法
             if (annotation.annotationType() == Subscribe.class) {
                 result.add(method);
             }
@@ -157,15 +162,19 @@ public static List<Subscription> find(Object subscriber) {
 
     Class clazz = subscriber.getClass();
     Method[] methods = clazz.getDeclaredMethods();
+    // 遍历类中的所有方法
     for (Method method : methods) {
         Annotation[] annotations = method.getDeclaredAnnotations();
         for (Annotation annotation : annotations) {
+            // 找出被 @Subscribe 注解标记的方法
             if (annotation.annotationType() == Subscribe.class) {
                 Class[] parameterTypes = method.getParameterTypes();
                 if (parameterTypes.length == 0) {
                     throw new SchoolBusException("Event type must declared as @Subscriber methods' parameter");
                 }
+                // 和它的参数类型
                 Class eventType = parameterTypes[0];
+                // 连同 subscriber 一起封装起来
                 result.add(new Subscription(subscriber, method, eventType));
             }
         }
@@ -179,7 +188,7 @@ public static List<Subscription> find(Object subscriber) {
 }
 ```
 
-相比前面的方法增加了 `subscriber` 和 `eventType` 的封装，返回值也变成了 `Subscription` 列表。
+相比前面的方法增加了 `subscriber` 和 `eventType` 的封装，把 `register(subscriber)` 方法的参数和被 `@Subscribe` 标记的事件处理方法中的参数类型都封装进 `Subscription` 实例中，返回值也变成了 `Subscription` 列表。
 
 现在得到了订阅对象，再结合 a 小节中得到的结论，我们可以知道将来肯定会需要用事件类型来找对应的订阅对象，那不妨就先把它们保存起来。
 
@@ -284,3 +293,4 @@ public void onEvent(DefaultEvent event) {
 
 看，它依然在正常地运作！
 
+> 本文中所有代码参见 <https://github.com/chihane/SchoolBus>

@@ -1,16 +1,13 @@
 ---
-
 layout: post
 
 title: 闭门造公交车
 
-date: 2016-06-19 02:05:01 +0800
+date: 2016-06-19 02:05
 
 categories: Android
 
 tags: [eventbus, android, java]
-
-published: false
 ---
 
 事件总线的核心是事件的收发，收发中的收又可以进一步分为订阅和处理两部分，【订阅事件】【发送事件】【处理事件】这三个部分构成了事件总线框架的基础，其余内容都算是锦上添花。

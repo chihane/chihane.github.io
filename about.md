@@ -18,7 +18,7 @@ permalink: /about/
 
 ### #联系方式
 
-- Email: <{{site.theme.email_address}}>
+- Email: <chihane@yeah.net>
 - Github: <https://github.com/chihane>
 - Weibo: <http://weibo.com/chihaneh>
 

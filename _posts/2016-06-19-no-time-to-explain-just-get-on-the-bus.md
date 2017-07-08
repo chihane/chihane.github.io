@@ -96,7 +96,7 @@ public @interface Subscribe {}
 
 于是第四个问题就得到了答案。
 
-<img src="img/2016-06-19-event-barrow/1.jpg" />
+<img src="img/2016-06-19-no-time-to-explain-just-get-on-the-bus/1.jpg" />
 
 *『你不是说先解决第一个问题吗？』*
 
@@ -220,7 +220,7 @@ public void register(Object subscriber) {
 
 这也就是第三个问题的答案。
 
-<img src="img/2016-06-19-no-time-to-explain-just-get-on-the-bus/1.jpg" />
+<img src="img/2016-06-19-no-time-to-explain-just-get-on-the-bus/2.jpg" />
 
 *『什么时候跳到第三个问题的？』*
 
